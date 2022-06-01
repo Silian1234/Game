@@ -39,13 +39,12 @@ def run():
         activatorChecker = player.Player.activatorChecker(main.player)
 
         if PlayerY < 250 and NowLocation == Level_01.NowLocation:
-            secretaryDialog = VideoFileClip(r'SecretaryDialog.mp4')
-            
+            """secretaryDialog = VideoFileClip(r'SecretaryDialog.mp4')
             secretaryDialog.preview()
             letter = VideoFileClip('Letter.mp4')
             letter.preview()
             nextDay = VideoFileClip('NextDay.mp4')
-            nextDay.preview()
+            nextDay.preview()"""
 
             NowLocation = street.NowLocation
             NowLocationRect = street.NowLocationRect
