@@ -4,7 +4,7 @@ import params
 blockImage = pygame.image.load('red.png')
 activatorImage = pygame.image.load('empty.png')
 
-room1 = pygame.image.load('dveri_1.png')
+room1 = pygame.image.load('DoorRooms/dveri_1.png')
 room1_scaled = pygame.transform.scale(room1, (params.WIDTH, params.HEIGHT))
 room1_scaled_rect = room1_scaled.get_rect()
 
@@ -23,6 +23,10 @@ labirint_scaled_rect = labirint_scaled.get_rect()
 start_room = pygame.image.load('home.png')
 start_room_scaled = pygame.transform.scale(start_room, (params.WIDTH, params.HEIGHT))
 start_room_scaled_rect = start_room_scaled.get_rect()
+
+womanNPC = pygame.image.load('NPC 1.png')
+womanNPC_scaled = pygame.transform.scale(womanNPC, (params.WIDTH/24, params.HEIGHT/16))
+womanNPC_scaled_rect = womanNPC_scaled.get_rect()
 
 player_image_right1 = pygame.image.load("player/bock1.png")
 player_image_right1 = pygame.transform.scale(player_image_right1, (params.WIDTH/24, params.HEIGHT/16))

@@ -12,6 +12,7 @@ def run():
     NowLocationBase = 'Level_01.NowLocation'
     newXPos = Level_01.newXPos
     newYPos = Level_01.newYPos
+    NPSS = []
 
     running = True
     while running:
@@ -69,6 +70,9 @@ def run():
 
         for i in range(0, len(activator)):
             main.all_sprites.add(activator[i])
+
+        for i in range(0, len(NPSS)):
+            main.all_sprites.add(NPSS[i])
 
         main.player.setWalls(walls)
         main.player.setActivator(activator)

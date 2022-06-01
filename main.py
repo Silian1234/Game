@@ -23,8 +23,6 @@ sprites_for_dialog = pygame.sprite.Group()
     NPS.NPS(params.WIDTH/20, params.HEIGHT/13, 870, 600),
 ]"""
 
-#walls = []
-
 """for i in range(0, len(NPSS)):
     all_sprites.add(NPSS[i])"""
 
