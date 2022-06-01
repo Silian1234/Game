@@ -55,7 +55,7 @@ class Player(pygame.sprite.Sprite):
             if row[0] != row[1]:
                 self.rect.y = row[3]
                 self.rect.x = row[2]
-            cur.execute(f"UPDATE PlayerPos SET befLocation = '{row[0]}' WHERE id = 1")
+            cur.execute(f"UPDATE PlayerPos SET befLocation = '{row[0]}'")
             con.commit()
         self.rect.x += self.speedx
         self.rect.y += self.speedy
