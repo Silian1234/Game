@@ -1,6 +1,7 @@
-import pygame
+import pygame, time
 import params, main, player, Level_01, street, workRoom
 from config import cur, con
+from moviepy.editor import *
 
 def run():
     global walls, activator, NowLocation, NowLocationRect, NowLocationBase
@@ -38,12 +39,13 @@ def run():
         activatorChecker = player.Player.activatorChecker(main.player)
 
         if PlayerY < 250 and NowLocation == Level_01.NowLocation:
-            """secretaryDialog = VideoFileClip(r'SecretaryDialog.mp4')
+            secretaryDialog = VideoFileClip(r'SecretaryDialog.mp4')
             secretaryDialog.preview()
             letter = VideoFileClip('Letter.mp4')
             letter.preview()
             nextDay = VideoFileClip('NextDay.mp4')
-            nextDay.preview()"""
+            nextDay.preview()
+            time.sleep(0.1)
 
             NowLocation = street.NowLocation
             NowLocationRect = street.NowLocationRect
@@ -53,7 +55,7 @@ def run():
             newXPos = street.newXPos
             newYPos = street.newYPos
 
-        if activatorChecker == True and NowLocation == Level_01.NowLocation:
+        if activatorChecker == True and NowLocation == street.NowLocation:
             NowLocation = workRoom.NowLocation
             NowLocationRect = workRoom.NowLocationRect
             NowLocationBase = 'workRoom.NowLocation'

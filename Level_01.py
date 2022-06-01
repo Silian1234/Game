@@ -19,7 +19,7 @@ walls = [
 ]
 
 activator = [
-    Activator.Activator(100, 100, 400, 250)
+
 ]
 
 newXPos = 1500

@@ -9,7 +9,7 @@ walls = [
 ]
 
 activator = [
-
+    Activator.Activator(300, 100, 750, 550)
 ]
 
 newXPos = 800
