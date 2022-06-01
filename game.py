@@ -1,6 +1,5 @@
-import pygame, random
-import params, main, imports, player, dialogs, Level_01, DoorRoom01, LabirintRoom, street, workRoom
-from moviepy.editor import *
+import pygame
+import params, main, player, Level_01, street, workRoom
 from config import cur, con
 
 def run():
