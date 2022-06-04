@@ -3,6 +3,8 @@ import params
 
 blockImage = pygame.image.load('red.png')
 activatorImage = pygame.image.load('empty.png')
+firstDialog = pygame.image.load('dialoge 1.png')
+secondDialog = pygame.image.load('dialoge 2.png')
 
 room1 = pygame.image.load('DoorRooms/dveri_1.png')
 room1_scaled = pygame.transform.scale(room1, (params.WIDTH, params.HEIGHT))
@@ -15,6 +17,10 @@ street_scaled_rect = street_scaled.get_rect()
 workRoom = pygame.image.load('workRoom.png')
 workRoom_scaled = pygame.transform.scale(workRoom, (params.WIDTH, params.HEIGHT))
 workRoom_scaled_rect = workRoom_scaled.get_rect()
+
+computerRoom = pygame.image.load('computerRoom.png')
+computerRoom_scaled = pygame.transform.scale(computerRoom, (params.WIDTH, params.HEIGHT))
+computerRoom_scaled_rect = computerRoom_scaled.get_rect()
 
 labirint = pygame.image.load('labirint.png')
 labirint_scaled = pygame.transform.scale(labirint, (params.WIDTH, params.HEIGHT))

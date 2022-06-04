@@ -1,8 +1,8 @@
 import pygame
 import params, Block, imports, Activator, NPS, dialogs
 
-NowLocation = imports.workRoom_scaled
-NowLocationRect = imports.workRoom_scaled_rect
+NowLocation = imports.computerRoom_scaled
+NowLocationRect = imports.computerRoom_scaled_rect
 
 walls = [
 
@@ -17,7 +17,7 @@ NPSSS = [
 ]
 
 dialog_window = [
-    dialogs.dialog(1300, 300, 450, 650, imports.firstDialog)
+    dialogs.dialog(1300, 300, 450, 650, imports.secondDialog)
 ]
 
 newXPos = 1700

@@ -1,7 +1,12 @@
 import pygame, time
-import params, main, player, Level_01, street, workRoom
+import params, main, player, Level_01, street, workRoom, computerRoom
 from config import cur, con
 from moviepy.editor import *
+
+dialogRooms = [
+    workRoom.NowLocation,
+    computerRoom.NowLocation
+]
 
 def run():
     global walls, activator, NowLocation, NowLocationRect, NowLocationBase
@@ -12,7 +17,7 @@ def run():
     NowLocationBase = 'Level_01.NowLocation'
     newXPos = Level_01.newXPos
     newYPos = Level_01.newYPos
-    NPSS = []
+    dialog_window = []
 
     running = True
     while running:
@@ -34,6 +39,15 @@ def run():
         # Обновление
         main.all_sprites.update()
         # Рендеринг
+
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_f:
+                    params.switch += 1
+                if params.switch % 2 == 0:
+                    params.for_spawn_dialog_window = True
+                if params.switch % 2 == 1:
+                    params.for_spawn_dialog_window = False
 
         PlayerY = player.Player.getY(main.player)
         PlayerX = player.Player.getX(main.player)
@@ -64,6 +78,18 @@ def run():
             activator = workRoom.activator
             newXPos = workRoom.newXPos
             newYPos = workRoom.newYPos
+            dialog_window = workRoom.dialog_window
+
+        if PlayerY < 250 and NowLocation == workRoom.NowLocation:
+            NowLocation = computerRoom.NowLocation
+            NowLocationRect = computerRoom.NowLocationRect
+            NowLocationBase = 'computerRoom.NowLocation'
+            walls = computerRoom.walls
+            activator = computerRoom.activator
+            newXPos = computerRoom.newXPos
+            newYPos = computerRoom.newYPos
+            main.sprites_for_dialog = pygame.sprite.Group()
+            dialog_window = computerRoom.dialog_window
 
         for i in range(0, len(walls)):
             main.all_sprites.add(walls[i])
@@ -71,8 +97,8 @@ def run():
         for i in range(0, len(activator)):
             main.all_sprites.add(activator[i])
 
-        for i in range(0, len(NPSS)):
-            main.all_sprites.add(NPSS[i])
+        for i in range(0, len(dialog_window)):
+            main.sprites_for_dialog.add(dialog_window[i])
 
         main.player.setWalls(walls)
         main.player.setActivator(activator)
@@ -80,18 +106,13 @@ def run():
         main.screen.blit(NowLocation, NowLocationRect)
         main.all_sprites.draw(main.screen)
 
-        if params.for_spawn_dialog_window == True:
-            main.sprites_for_dialog.update()
-            main.sprites_for_dialog.draw(main.screen)
+        if activatorChecker == True:
+            if params.for_spawn_dialog_window == True:
+                if NowLocation in dialogRooms:
+                    main.sprites_for_dialog.update()
+                    main.sprites_for_dialog.draw(main.screen)
 
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
-                    params.switch += 1
-                if params.switch % 2 == 0:
-                    params.for_spawn_dialog_window = True
-                if params.switch % 2 == 1:
-                    params.for_spawn_dialog_window = False
+
 
         # После отрисовки всего, переворачиваем экран
         pygame.display.flip()
