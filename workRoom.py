@@ -5,7 +5,11 @@ NowLocation = imports.workRoom_scaled
 NowLocationRect = imports.workRoom_scaled_rect
 
 walls = [
-
+    Block.Block(10, 1000, 385, 100),
+    Block.Block(10, 467, 1667, 100),
+    Block.Block(10, 467, 1667, 801),
+    Block.Block(1500, 10, 385, 995),
+    Block.Block(1200, 10, 588, 260),
 ]
 
 activator = [
