@@ -14,7 +14,7 @@ clock = pygame.time.Clock()
 WIDTH = pygame.display.Info().current_w
 HEIGHT = pygame.display.Info().current_h
 
-dialog_window = [dialogs.dialog(1000, 300, 450, 650)]
+dialog_window = [dialogs.dialog(1000, 300, 450, 650, imports.blockImage)]
 
 all_sprites = pygame.sprite.Group()
 sprites_for_dialog = pygame.sprite.Group()
@@ -28,9 +28,6 @@ sprites_for_dialog = pygame.sprite.Group()
 
 #for i in range(0, len(walls)):
 #    all_sprites.add(walls[i])
-
-for i in range(0, len(dialog_window)):
-    sprites_for_dialog.add(dialog_window[i])
 
 player = player.Player()
 #player.setWalls(walls)

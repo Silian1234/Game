@@ -4,11 +4,11 @@ import imports
 
 
 class dialog(pygame.sprite.Sprite):
-    def __init__(self, width, height, x, y):
+    def __init__(self, width, height, x, y, Image):
         # Конструктор платформ
         super().__init__()
         # Также указываем фото платформы
-        self.image = pygame.transform.scale(imports.blockImage, (width, height))
+        self.image = pygame.transform.scale(Image, (width, height))
         self.rect = pygame.Rect(width, height, x, y)
         self.rect.x = x
         self.rect.y = y
