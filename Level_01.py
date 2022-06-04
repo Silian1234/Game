@@ -15,7 +15,14 @@ walls = [
     Block.Block(400, 10, 150, 250),
     Block.Block(1000, 10, 770, 250),
     Block.Block(10, 270, 550, 0),
-    Block.Block(10, 270, 770, 0)
+    Block.Block(10, 270, 770, 0),
+    Block.Block(125, 120, 1050, 820),
+    Block.Block(400, 130, 1345, 283),
+    Block.Block(240, 200, 240, 170),
+    Block.Block(96, 90, 911, 270),
+    Block.Block(260, 400, 171, 600),
+    Block.Block(96, 90, 1567, 820),
+    Block.Block(170, 81, 780, 639),
 ]
 
 activator = [
@@ -23,4 +30,4 @@ activator = [
 ]
 
 newXPos = 1500
-newYPos = 400
+newYPos = 1000

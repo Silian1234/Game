@@ -10,7 +10,7 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(imports.player_image_right1, (params.WIDTH/24, params.HEIGHT/16))
         self.rect = self.image.get_rect()
         self.rect.centerx = params.WIDTH / 1.2
-        self.rect.bottom = params.HEIGHT - 650
+        self.rect.bottom = params.HEIGHT - 550
         self.speedx = 0
         self.speedy = 0
         self.animCountAD = 0
