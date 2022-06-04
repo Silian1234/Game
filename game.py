@@ -100,8 +100,6 @@ def run():
         for i in range(0, len(dialog_window)):
             main.sprites_for_dialog.add(dialog_window[i])
 
-        print(main.all_sprites)
-
         main.player.setWalls(walls)
         main.player.setActivator(activator)
 
