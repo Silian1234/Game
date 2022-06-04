@@ -30,4 +30,4 @@ activator = [
 ]
 
 newXPos = 1500
-newYPos = 1000
+newYPos = 400
