@@ -107,12 +107,13 @@ def run():
         main.all_sprites.draw(main.screen)
 
         if activatorChecker == True:
-            if params.for_spawn_dialog_window == True:
-                if NowLocation in dialogRooms:
-                    main.sprites_for_dialog.update()
-                    main.sprites_for_dialog.draw(main.screen)
-
-
+            #if params.for_spawn_dialog_window == True:
+            if PlayerX > 1050 and PlayerY > 650 and NowLocation == computerRoom.NowLocation:
+                letterScene = VideoFileClip('letterScene.mp4')
+                letterScene.preview()
+            if NowLocation in dialogRooms:
+                main.sprites_for_dialog.update()
+                main.sprites_for_dialog.draw(main.screen)
 
         # После отрисовки всего, переворачиваем экран
         pygame.display.flip()

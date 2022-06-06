@@ -9,7 +9,8 @@ walls = [
 ]
 
 activator = [
-    Activator.Activator(200, 200, 1050, 250)
+    Activator.Activator(200, 200, 1050, 250),
+    Activator.Activator(200, 200, 1250, 700)
 ]
 
 NPSSS = [

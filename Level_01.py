@@ -29,5 +29,5 @@ activator = [
 
 ]
 
-newXPos = 1500
-newYPos = 1000
+newXPos = params.WIDTH / 1.2
+newYPos = params.HEIGHT / 2
