@@ -10,6 +10,38 @@ room1 = pygame.image.load('DoorRooms/dveri_1.png')
 room1_scaled = pygame.transform.scale(room1, (params.WIDTH, params.HEIGHT))
 room1_scaled_rect = room1_scaled.get_rect()
 
+room2 = pygame.image.load('DoorRooms/dveri_2.png')
+room2_scaled = pygame.transform.scale(room2, (params.WIDTH, params.HEIGHT))
+room2_scaled_rect = room2_scaled.get_rect()
+
+room3 = pygame.image.load('DoorRooms/dveri_3.png')
+room3_scaled = pygame.transform.scale(room3, (params.WIDTH, params.HEIGHT))
+room3_scaled_rect = room3_scaled.get_rect()
+
+room4 = pygame.image.load('DoorRooms/dveri_4.png')
+room4_scaled = pygame.transform.scale(room4, (params.WIDTH, params.HEIGHT))
+room4_scaled_rect = room4_scaled.get_rect()
+
+room5 = pygame.image.load('DoorRooms/dveri_5.png')
+room5_scaled = pygame.transform.scale(room5, (params.WIDTH, params.HEIGHT))
+room5_scaled_rect = room5_scaled.get_rect()
+
+room6 = pygame.image.load('DoorRooms/dveri_6.png')
+room6_scaled = pygame.transform.scale(room6, (params.WIDTH, params.HEIGHT))
+room6_scaled_rect = room6_scaled.get_rect()
+
+room7 = pygame.image.load('DoorRooms/dveri_7.png')
+room7_scaled = pygame.transform.scale(room7, (params.WIDTH, params.HEIGHT))
+room7_scaled_rect = room7_scaled.get_rect()
+
+room8 = pygame.image.load('DoorRooms/dveri_8.png')
+room8_scaled = pygame.transform.scale(room8, (params.WIDTH, params.HEIGHT))
+room8_scaled_rect = room8_scaled.get_rect()
+
+room9 = pygame.image.load('DoorRooms/dveri_9.png')
+room9_scaled = pygame.transform.scale(room9, (params.WIDTH, params.HEIGHT))
+room9_scaled_rect = room9_scaled.get_rect()
+
 street = pygame.image.load('Street.png')
 street_scaled = pygame.transform.scale(street, (params.WIDTH, params.HEIGHT))
 street_scaled_rect = street_scaled.get_rect()
