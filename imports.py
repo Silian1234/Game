@@ -5,10 +5,31 @@ blockImage = pygame.image.load('red.png')
 activatorImage = pygame.image.load('empty.png')
 firstDialog = pygame.image.load('dialoge 1.png')
 secondDialog = pygame.image.load('dialoge 2.png')
+thirdDialog = pygame.image.load('dialog3.png')
 
 room1 = pygame.image.load('DoorRooms/dveri_1.png')
 room1_scaled = pygame.transform.scale(room1, (params.WIDTH, params.HEIGHT))
 room1_scaled_rect = room1_scaled.get_rect()
+
+brainRoom1 = pygame.image.load('BrainRooms/brain1.1.png')
+brainRoom1_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom1_scaled_rect = brainRoom1_scaled.get_rect()
+
+brainRoom2 = pygame.image.load('BrainRooms/brain1.2.png')
+brainRoom2_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom2_scaled_rect = brainRoom2_scaled.get_rect()
+
+brainRoom3 = pygame.image.load('BrainRooms/brain1.3.png')
+brainRoom3_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom3_scaled_rect = brainRoom3_scaled.get_rect()
+
+brainRoom4 = pygame.image.load('BrainRooms/brain1.4.png')
+brainRoom4_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom4_scaled_rect = brainRoom4_scaled.get_rect()
+
+brainRoom5 = pygame.image.load('BrainRooms/brain1.5.png')
+brainRoom5_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom5_scaled_rect = brainRoom5_scaled.get_rect()
 
 street = pygame.image.load('Street.png')
 street_scaled = pygame.transform.scale(street, (params.WIDTH, params.HEIGHT))
