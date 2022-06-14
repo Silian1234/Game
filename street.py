@@ -5,12 +5,13 @@ NowLocation = imports.street_scaled
 NowLocationRect = imports.start_room_scaled_rect
 
 walls = [
-
+       Block.Block(10, 900, 870, 500),
+       Block.Block(10, 900, 1045, 500),
 ]
 
 activator = [
-    Activator.Activator(300, 100, 750, 550)
+    Activator.Activator(400, 100, 750, 550)
 ]
 
-newXPos = 800
-newYPos = 900
+newXPos = 1000
+newYPos = 1000

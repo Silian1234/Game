@@ -5,9 +5,12 @@ NowLocation = imports.room8_scaled
 NowLocationRect = imports.room8_scaled_rect
 
 walls = [
-
+    Block.Block(1920, 10, 0, 520)
 ]
 
 activator = [
-    Activator.Activator(50, 50, 500, 500)
+    Activator.Activator(120, 50, 620, 635)
 ]
+
+newXPos = 960
+newYPos = 830
