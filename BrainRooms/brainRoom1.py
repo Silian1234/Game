@@ -5,7 +5,7 @@ NowLocation = imports.brainRoom1_scaled
 NowLocationRect = imports.brainRoom1_scaled_rect
 
 walls = [
-
+    Block.Block(1920, 10, 0, 540)
 ]
 
 activator = [

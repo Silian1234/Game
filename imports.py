@@ -16,19 +16,19 @@ brainRoom1_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEI
 brainRoom1_scaled_rect = brainRoom1_scaled.get_rect()
 
 brainRoom2 = pygame.image.load('BrainRooms/brain1.2.png')
-brainRoom2_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom2_scaled = pygame.transform.scale(brainRoom2, (params.WIDTH, params.HEIGHT))
 brainRoom2_scaled_rect = brainRoom2_scaled.get_rect()
 
 brainRoom3 = pygame.image.load('BrainRooms/brain1.3.png')
-brainRoom3_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom3_scaled = pygame.transform.scale(brainRoom3, (params.WIDTH, params.HEIGHT))
 brainRoom3_scaled_rect = brainRoom3_scaled.get_rect()
 
 brainRoom4 = pygame.image.load('BrainRooms/brain1.4.png')
-brainRoom4_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom4_scaled = pygame.transform.scale(brainRoom4, (params.WIDTH, params.HEIGHT))
 brainRoom4_scaled_rect = brainRoom4_scaled.get_rect()
 
 brainRoom5 = pygame.image.load('BrainRooms/brain1.5.png')
-brainRoom5_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
+brainRoom5_scaled = pygame.transform.scale(brainRoom5, (params.WIDTH, params.HEIGHT))
 brainRoom5_scaled_rect = brainRoom5_scaled.get_rect()
 
 street = pygame.image.load('Street.png')
