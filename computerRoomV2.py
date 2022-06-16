@@ -20,5 +20,5 @@ dialog_window = [
     dialogs.dialog(1300, 300, 450, 650, imports.thirdDialog)
 ]
 
-newXPos = params.WIDTH / (params.WIDTH / 1644)
-newYPos = params.HEIGHT / (params.HEIGHT / 324)
+newXPos = params.WIDTH / (params.WIDTH / 1210)
+newYPos = params.HEIGHT / (params.HEIGHT / 690)

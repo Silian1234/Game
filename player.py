@@ -1,4 +1,4 @@
-import pygame, asyncio
+import pygame, asyncio, labirint1
 import params, imports, menu
 import NPS, dialogs
 from config import cur, con
@@ -7,7 +7,11 @@ from config import cur, con
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
+        #for row in cur.execute(f"SELECT location FROM PlayerPos"):
+            #NowLocation = row[0]
+            #if NowLocation != 'labirint1.NowLocation':
         self.image = pygame.transform.scale(imports.player_image_right1, (params.WIDTH/24, params.HEIGHT/16))
+            #else: self.image = pygame.transform.scale(imports.redDot, (15, 15))
         self.rect = self.image.get_rect()
         self.rect.x = params.WIDTH / 1.2
         self.rect.y = params.HEIGHT / 2
@@ -28,24 +32,43 @@ class Player(pygame.sprite.Sprite):
         self.speedx = 0
         self.speedy = 0
         keystate = pygame.key.get_pressed()
-        if keystate[pygame.K_ESCAPE]:
-            menu.start()
-        if keystate[pygame.K_a]:
-            self.speedx = -10
-            self.image = imports.walkLeft[self.animCountAD // 5]
-            self.animCountAD += 1
-        if keystate[pygame.K_d]:
-            self.speedx = 10
-            self.image = imports.walkRight[self.animCountAD//5]
-            self.animCountAD +=1
-        if keystate[pygame.K_w]:
-            self.speedy = -10
-            self.image = imports.walkUp[self.animCountWS//4]
-            self.animCountWS +=1
-        if keystate[pygame.K_s]:
-            self.speedy = 10
-            self.image = imports.walkDown[self.animCountWS // 4]
-            self.animCountWS += 1
+        for row in cur.execute(f"SELECT location FROM PlayerPos"):
+            NowLocation = row[0]
+            if NowLocation != 'labirint1.NowLocation':
+                if keystate[pygame.K_a]:
+                    self.speedx = -10
+                    self.image = imports.walkLeft[self.animCountAD // 5]
+                    self.animCountAD += 1
+                if keystate[pygame.K_d]:
+                    self.speedx = 10
+                    self.image = imports.walkRight[self.animCountAD//5]
+                    self.animCountAD +=1
+                if keystate[pygame.K_w]:
+                    self.speedy = -10
+                    self.image = imports.walkUp[self.animCountWS//4]
+                    self.animCountWS +=1
+                if keystate[pygame.K_s]:
+                    self.speedy = 10
+                    self.image = imports.walkDown[self.animCountWS // 4]
+                    self.animCountWS += 1
+            else:
+                self.image = imports.redDot
+                if keystate[pygame.K_a]:
+                    self.speedx = -10
+                    self.image = imports.redDot
+                    self.animCountAD += 1
+                if keystate[pygame.K_d]:
+                    self.speedx = 10
+                    self.image = imports.redDot
+                    self.animCountAD +=1
+                if keystate[pygame.K_w]:
+                    self.speedy = -10
+                    self.image = imports.redDot
+                    self.animCountWS +=1
+                if keystate[pygame.K_s]:
+                    self.speedy = 10
+                    self.image = imports.redDot
+                    self.animCountWS += 1
         NowX = self.rect.x
         NowY = self.rect.y
         cur.execute(f"UPDATE PlayerPos SET xPos = {NowX}")

@@ -14,7 +14,7 @@ class dialog(pygame.sprite.Sprite):
         self.rect.y = y
         self.rect.width = width
         self.rect.height = height
-        self.for_text = pygame.font.SysFont('arial', 20)
+        #self.for_text = pygame.font.SysFont('arial', 20)
         self.dialog_text = 0
         self.a = 0
         self.stroka = 0
@@ -25,5 +25,5 @@ class dialog(pygame.sprite.Sprite):
         self.a = int(self.dialog_text.readline())
         for i in range(self.a):
             self.stroka = self.dialog_text.readline()
-            self.stroka = self.for_text.render(self.stroka, True, params.WHITE)
-            self.pos_stroki = self.stroka.get_rect(centre=(params.WIDTH // 2, params.HEIGHT // 2))
+            #self.stroka = self.for_text.render(self.stroka, True, params.WHITE)
+            #self.pos_stroki = self.stroka.get_rect(centre=(params.WIDTH // 2, params.HEIGHT // 2))

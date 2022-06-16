@@ -15,8 +15,6 @@ mytheme.widget_font = pygame_menu.font.FONT_8BIT
 def start_the_game():
     # Do the job here !
     pygame.mixer.music.stop()
-    scene0 = VideoFileClip('Scene0.mp4')
-    scene0.preview()
     scene1 = VideoFileClip(r'Scene1.mp4')
     scene1.preview()
     time.sleep(0.1)
@@ -32,8 +30,6 @@ def start():
 
     menu = pygame_menu.Menu('Menu', params.WIDTH, params.HEIGHT,
                            theme=mytheme)
-
     menu.add.button('Play', start_the_game)
     menu.add.button('Exit', pygame_menu.events.EXIT)
-
     menu.mainloop(surface)

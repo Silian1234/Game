@@ -2,12 +2,17 @@ import pygame
 import params
 
 blockImage = pygame.image.load('red.png')
+redDot = pygame.transform.scale(blockImage, (15, 15))
 activatorImage = pygame.image.load('empty.png')
 firstDialog = pygame.image.load('dialoge 1.png')
 secondDialog = pygame.image.load('dialoge 2.png')
 thirdDialog = pygame.image.load('dialog3.png')
 workRoomV2Dialog = pygame.image.load('dialog4.png')
 officeRoomDialog = pygame.image.load('dialog5.png')
+officeRoomDialogV2 = pygame.image.load('dialog6.png')
+workRoomDialogV3 = pygame.image.load('dialog7.png')
+workRoomDialogV4 = pygame.image.load('workRoomDialogV4.png')
+bossDialog = pygame.image.load('bossDialog.png')
 
 brainRoom1 = pygame.image.load('BrainRooms/brain1.1.png')
 brainRoom1_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
@@ -29,9 +34,21 @@ brainRoom5 = pygame.image.load('BrainRooms/brain1.5.png')
 brainRoom5_scaled = pygame.transform.scale(brainRoom5, (params.WIDTH, params.HEIGHT))
 brainRoom5_scaled_rect = brainRoom5_scaled.get_rect()
 
+bossRoom = pygame.image.load('bossRoom.png')
+bossRoom_scaled = pygame.transform.scale(bossRoom, (params.WIDTH, params.HEIGHT))
+bossRoom_scaled_rect = bossRoom_scaled.get_rect()
+
 street = pygame.image.load('Street.png')
 street_scaled = pygame.transform.scale(street, (params.WIDTH, params.HEIGHT))
 street_scaled_rect = street_scaled.get_rect()
+
+underground = pygame.image.load('underground.png')
+underground_scaled = pygame.transform.scale(underground, (params.WIDTH, params.HEIGHT))
+underground_scaled_rect = underground_scaled.get_rect()
+
+undergroundV2 = pygame.image.load('undergroundV2.png')
+undergroundV2_scaled = pygame.transform.scale(undergroundV2, (params.WIDTH, params.HEIGHT))
+undergroundV2_scaled_rect = undergroundV2_scaled.get_rect()
 
 workRoom = pygame.image.load('workRoom.png')
 workRoom_scaled = pygame.transform.scale(workRoom, (params.WIDTH, params.HEIGHT))
@@ -41,9 +58,21 @@ workRoomV2 = pygame.image.load('workRoomV2.png')
 workRoomV2_scaled = pygame.transform.scale(workRoomV2, (params.WIDTH, params.HEIGHT))
 workRoomV2_scaled_rect = workRoomV2_scaled.get_rect()
 
+workRoomV3 = pygame.image.load('workRoomV3.png')
+workRoomV3_scaled = pygame.transform.scale(workRoomV3, (params.WIDTH, params.HEIGHT))
+workRoomV3_scaled_rect = workRoomV3_scaled.get_rect()
+
+workRoomV4 = pygame.image.load('workRoomV4.png')
+workRoomV4_scaled = pygame.transform.scale(workRoomV4, (params.WIDTH, params.HEIGHT))
+workRoomV4_scaled_rect = workRoomV4_scaled.get_rect()
+
 officeRoom = pygame.image.load('officeRoom.png')
 officeRoom_scaled = pygame.transform.scale(officeRoom, (params.WIDTH, params.HEIGHT))
 officeRoom_scaled_rect = officeRoom_scaled.get_rect()
+
+officeRoomV2 = pygame.image.load('officeRoomV2.png')
+officeRoomV2_scaled = pygame.transform.scale(officeRoomV2, (params.WIDTH, params.HEIGHT))
+officeRoomV2_scaled_rect = officeRoomV2_scaled.get_rect()
 
 computerRoom = pygame.image.load('computerRoom.png')
 computerRoom_scaled = pygame.transform.scale(computerRoom, (params.WIDTH, params.HEIGHT))
@@ -57,9 +86,17 @@ computerRoomV3 = pygame.image.load('computerRoomV3.png')
 computerRoomV3_scaled = pygame.transform.scale(computerRoomV3, (params.WIDTH, params.HEIGHT))
 computerRoomV3_scaled_rect = computerRoomV3_scaled.get_rect()
 
-labirint = pygame.image.load('labirint.png')
-labirint_scaled = pygame.transform.scale(labirint, (params.WIDTH, params.HEIGHT))
-labirint_scaled_rect = labirint_scaled.get_rect()
+computerRoomV4 = pygame.image.load('computerRoomV4.png')
+computerRoomV4_scaled = pygame.transform.scale(computerRoomV4, (params.WIDTH, params.HEIGHT))
+computerRoomV4_scaled_rect = computerRoomV4_scaled.get_rect()
+
+computerRoomV5 = pygame.image.load('computerRoomV5.png')
+computerRoomV5_scaled = pygame.transform.scale(computerRoomV5, (params.WIDTH, params.HEIGHT))
+computerRoomV5_scaled_rect = computerRoomV5_scaled.get_rect()
+
+labirint1 = pygame.image.load('labirint1.png')
+labirint1_scaled = pygame.transform.scale(labirint1, (params.WIDTH, params.HEIGHT))
+labirint1_scaled_rect = labirint1_scaled.get_rect()
 
 start_room = pygame.image.load('home.png')
 start_room_scaled = pygame.transform.scale(start_room, (params.WIDTH, params.HEIGHT))

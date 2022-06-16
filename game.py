@@ -1,5 +1,5 @@
-import pygame, time
-import params, main, player, Level_01, street, workRoom, computerRoom, computerRoomV2, workRoomV2, computerRoomV3, officeRoom
+import pygame, time, officeRoomV2, computerRoomV4, workRoomV3, undergroung, labirint1, undergroundV2, workRoomV4, computerRoomV5
+import params, main, player, Level_01, street, workRoom, computerRoom, computerRoomV2, workRoomV2, computerRoomV3, officeRoom, bossRoom
 from DoorRooms import DoorRoom01, DoorRoom02, DoorRoom03,DoorRoom04, DoorRoom05, DoorRoom06, DoorRoom07, DoorRoom08, DoorRoom09
 from config import cur, con
 from moviepy.editor import *
@@ -10,7 +10,11 @@ dialogRooms = [
     computerRoom.NowLocation,
     computerRoomV2.NowLocation,
     workRoomV2.NowLocation,
-    officeRoom.NowLocation
+    officeRoom.NowLocation,
+    officeRoomV2.NowLocation,
+    workRoomV3.NowLocation,
+    workRoomV4.NowLocation,
+    bossRoom.NowLocation
 ]
 
 doorRooms = [
@@ -211,6 +215,62 @@ def run():
             newXPos = DoorRoom01.newXPos
             newYPos = DoorRoom01.newXPos
 
+        elif 550 < PlayerY < 650 and 570 < PlayerX < 700 and NowLocation == DoorRoom09.NowLocation:
+            NowLocation = officeRoomV2.NowLocation
+            NowLocationRect = officeRoomV2.NowLocationRect
+            NowLocationBase = 'officeRoomV2.NowLocation'
+            walls = officeRoomV2.walls
+            activator = officeRoomV2.activator
+            newXPos = officeRoomV2.newXPos
+            newYPos = officeRoomV2.newYPos
+            main.sprites_for_dialog = pygame.sprite.Group()
+            dialog_window = officeRoomV2.dialog_window
+
+        elif PlayerY > 1000 and NowLocation == officeRoomV2.NowLocation:
+            NowLocation = computerRoomV4.NowLocation
+            NowLocationRect = computerRoomV4.NowLocationRect
+            NowLocationBase = 'computerRoomV4.NowLocation'
+            walls = computerRoomV4.walls
+            activator = computerRoomV4.activator
+            newXPos = computerRoomV4.newXPos
+            newYPos = computerRoomV4.newYPos
+            main.sprites_for_dialog = pygame.sprite.Group()
+
+        elif PlayerX < 460 and PlayerY > 840 and NowLocation == workRoomV3.NowLocation:
+            NowLocation = undergroung.NowLocation
+            NowLocationRect = undergroung.NowLocationRect
+            NowLocationBase = 'undergroung.NowLocation'
+            walls = undergroung.walls
+            activator = undergroung.activator
+            newXPos = undergroung.newXPos
+            newYPos = undergroung.newYPos
+            main.sprites_for_dialog = pygame.sprite.Group()
+
+        elif PlayerX < 340 and PlayerY > 1015 and NowLocation == labirint1.NowLocation:
+            NowLocation = undergroundV2.NowLocation
+            NowLocationRect = undergroundV2.NowLocationRect
+            NowLocationBase = 'undergroundV2.NowLocation'
+            walls = undergroundV2.walls
+            activator = undergroundV2.activator
+            newXPos = undergroundV2.newXPos
+            newYPos = undergroundV2.newYPos
+            main.sprites_for_dialog = pygame.sprite.Group()
+
+        elif PlayerX > params.WIDTH / (params.WIDTH / 400) and PlayerY < params.HEIGHT / (params.HEIGHT / 328) and NowLocation == workRoomV4.NowLocation:
+            NowLocation = computerRoomV5.NowLocation
+            NowLocationRect = computerRoomV5.NowLocationRect
+            NowLocationBase = 'computerRoomV5.NowLocation'
+            walls = computerRoomV5.walls
+            activator = computerRoomV5.activator
+            newXPos = computerRoomV5.newXPos
+            newYPos = computerRoomV5.newYPos
+            main.sprites_for_dialog = pygame.sprite.Group()
+
+        elif PlayerY > params.HEIGHT / (params.HEIGHT / 1000) and NowLocation == bossRoom.NowLocation:
+            finalVideo = VideoFileClip('finalVideo.mp4')
+            finalVideo.preview()
+            time.sleep(1)
+            running = False
 
         if activatorChecker == True:
             if PlayerX > 1050 and PlayerY > 650 and NowLocation == computerRoom.NowLocation:
@@ -284,6 +344,62 @@ def run():
                 main.sprites_for_dialog = pygame.sprite.Group()
                 dialog_window = officeRoom.dialog_window
 
+            elif NowLocation == computerRoomV4.NowLocation:
+                NowLocation = workRoomV3.NowLocation
+                NowLocationRect = workRoomV3.NowLocationRect
+                NowLocationBase = 'workRoomV3.NowLocation'
+                walls = workRoomV3.walls
+                activator = workRoomV3.activator
+                newXPos = workRoomV3.newXPos
+                newYPos = workRoomV3.newYPos
+                main.sprites_for_dialog = pygame.sprite.Group()
+                dialog_window = workRoomV3.dialog_window
+
+            elif NowLocation == undergroung.NowLocation:
+                #labirintRulesScene = VideoFileClip('labirintRules.mp4')
+                #labirintRulesScene.preview()
+                #time.sleep(0.1)
+
+                """NowLocation = labirint1.NowLocation
+                NowLocationRect = labirint1.NowLocationRect
+                NowLocationBase = 'labirint1.NowLocation'
+                walls = labirint1.walls
+                activator = labirint1.activator
+                newXPos = labirint1.newXPos
+                newYPos = labirint1.newYPos
+                main.sprites_for_dialog = pygame.sprite.Group()"""
+
+                NowLocation = undergroundV2.NowLocation
+                NowLocationRect = undergroundV2.NowLocationRect
+                NowLocationBase = 'undergroundV2.NowLocation'
+                walls = undergroundV2.walls
+                activator = undergroundV2.activator
+                newXPos = undergroundV2.newXPos
+                newYPos = undergroundV2.newYPos
+                main.sprites_for_dialog = pygame.sprite.Group()
+
+            elif NowLocation == undergroundV2.NowLocation:
+                NowLocation = workRoomV4.NowLocation
+                NowLocationRect = workRoomV4.NowLocationRect
+                NowLocationBase = 'workRoomV4.NowLocation'
+                walls = workRoomV4.walls
+                activator = workRoomV4.activator
+                newXPos = workRoomV4.newXPos
+                newYPos = workRoomV4.newYPos
+                main.sprites_for_dialog = pygame.sprite.Group()
+                dialog_window = workRoomV4.dialog_window
+
+            elif NowLocation == computerRoomV5.NowLocation:
+                NowLocation = bossRoom.NowLocation
+                NowLocationRect = bossRoom.NowLocationRect
+                NowLocationBase = 'bossRoom.NowLocation'
+                walls = bossRoom.walls
+                activator = bossRoom.activator
+                newXPos = bossRoom.newXPos
+                newYPos = bossRoom.newYPos
+                main.sprites_for_dialog = pygame.sprite.Group()
+                dialog_window = bossRoom.dialog_window
+
         """for i in range(0, len(walls)):
             main.all_sprites.add(walls[i])
 
@@ -320,6 +436,25 @@ def run():
                 activator = DoorRoom01.activator
                 newXPos = DoorRoom01.newXPos
                 newYPos = DoorRoom01.newXPos
+                cur.execute(f"UPDATE PlayerPos SET befLocation = ' '")
+
+            elif NowLocation == labirint1.NowLocation:
+                gameover = VideoFileClip('Gameover.mp4')
+                gameover.preview()
+                time.sleep(0.1)
+
+                labirintRulesScene = VideoFileClip('SecondRules.mp4')
+                labirintRulesScene.preview()
+                time.sleep(0.1)
+
+                NowLocation = labirint1.NowLocation
+                NowLocationRect = labirint1.NowLocationRect
+                NowLocationBase = 'labirint1.NowLocation'
+                walls = labirint1.walls
+                activator = labirint1.activator
+                newXPos = labirint1.newXPos
+                newYPos = labirint1.newXPos
+                cur.execute(f"UPDATE PlayerPos SET befLocation = ' '")
 
         # После отрисовки всего, переворачиваем экран
         pygame.display.flip()
