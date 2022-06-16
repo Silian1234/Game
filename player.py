@@ -31,19 +31,19 @@ class Player(pygame.sprite.Sprite):
         if keystate[pygame.K_ESCAPE]:
             menu.start()
         if keystate[pygame.K_a]:
-            self.speedx = -100
+            self.speedx = -10
             self.image = imports.walkLeft[self.animCountAD // 5]
             self.animCountAD += 1
         if keystate[pygame.K_d]:
-            self.speedx = 100
+            self.speedx = 10
             self.image = imports.walkRight[self.animCountAD//5]
             self.animCountAD +=1
         if keystate[pygame.K_w]:
-            self.speedy = -100
+            self.speedy = -10
             self.image = imports.walkUp[self.animCountWS//4]
             self.animCountWS +=1
         if keystate[pygame.K_s]:
-            self.speedy = 100
+            self.speedy = 10
             self.image = imports.walkDown[self.animCountWS // 4]
             self.animCountWS += 1
         NowX = self.rect.x

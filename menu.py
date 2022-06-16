@@ -21,7 +21,7 @@ def start_the_game():
     scene1.preview()
     time.sleep(0.1)
     game.run()
-2
+
 def start():
     pygame.mixer.init()
     pygame.mixer.music.load("menu_music.mp3")

@@ -28,5 +28,5 @@ dialog_window = [
     dialogs.dialog(1300, 300, 450, 650, imports.secondDialog)
 ]
 
-newXPos = 1700
-newYPos = 600
+newXPos = params.WIDTH / (params.WIDTH / 1610)
+newYPos = params.HEIGHT / (params.HEIGHT / 365)

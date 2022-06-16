@@ -1,5 +1,6 @@
 import pygame, time
-import params, main, player, Level_01, street, workRoom, computerRoom, computerRoomV2
+import params, main, player, Level_01, street, workRoom, computerRoom, computerRoomV2, workRoomV2, computerRoomV3, officeRoom
+from DoorRooms import DoorRoom01, DoorRoom02, DoorRoom03,DoorRoom04, DoorRoom05, DoorRoom06, DoorRoom07, DoorRoom08, DoorRoom09
 from config import cur, con
 from moviepy.editor import *
 from BrainRooms import brainRoom1, brainRoom2, brainRoom3, brainRoom4, brainRoom5
@@ -7,7 +8,21 @@ from BrainRooms import brainRoom1, brainRoom2, brainRoom3, brainRoom4, brainRoom
 dialogRooms = [
     workRoom.NowLocation,
     computerRoom.NowLocation,
-    computerRoomV2.NowLocation
+    computerRoomV2.NowLocation,
+    workRoomV2.NowLocation,
+    officeRoom.NowLocation
+]
+
+doorRooms = [
+    DoorRoom01.NowLocation,
+    DoorRoom02.NowLocation,
+    DoorRoom03.NowLocation,
+    DoorRoom04.NowLocation,
+    DoorRoom05.NowLocation,
+    DoorRoom06.NowLocation,
+    DoorRoom07.NowLocation,
+    DoorRoom08.NowLocation,
+    DoorRoom09.NowLocation
 ]
 
 def run():
@@ -72,7 +87,7 @@ def run():
             newXPos = street.newXPos
             newYPos = street.newYPos
 
-        if activatorChecker == True and NowLocation == street.NowLocation:
+        elif activatorChecker == True and NowLocation == street.NowLocation:
             NowLocation = workRoom.NowLocation
             NowLocationRect = workRoom.NowLocationRect
             NowLocationBase = 'workRoom.NowLocation'
@@ -82,7 +97,7 @@ def run():
             newYPos = workRoom.newYPos
             dialog_window = workRoom.dialog_window
 
-        if PlayerY < 250 and NowLocation == workRoom.NowLocation:
+        elif PlayerY < 250 and NowLocation == workRoom.NowLocation:
             NowLocation = computerRoom.NowLocation
             NowLocationRect = computerRoom.NowLocationRect
             NowLocationBase = 'computerRoom.NowLocation'
@@ -93,10 +108,115 @@ def run():
             main.sprites_for_dialog = pygame.sprite.Group()
             dialog_window = computerRoom.dialog_window
 
+        elif PlayerX > params.WIDTH / (params.WIDTH / 1677) and PlayerY < params.HEIGHT / (params.HEIGHT / 400) and NowLocation == computerRoomV2.NowLocation:
+            NowLocation = workRoomV2.NowLocation
+            NowLocationRect = workRoomV2.NowLocationRect
+            NowLocationBase = 'workRoomV2.NowLocation'
+            walls = workRoomV2.walls
+            activator = workRoomV2.activator
+            newXPos = workRoomV2.newXPos
+            newYPos = workRoomV2.newYPos
+            main.sprites_for_dialog = pygame.sprite.Group()
+            dialog_window = workRoomV2.dialog_window
+
+        elif PlayerX > params.WIDTH / (params.WIDTH / 400) and PlayerY < params.HEIGHT / (params.HEIGHT / 328) and NowLocation == workRoomV2.NowLocation:
+            NowLocation = computerRoomV3.NowLocation
+            NowLocationRect = computerRoomV3.NowLocationRect
+            NowLocationBase = 'computerRoomV3.NowLocation'
+            walls = computerRoomV3.walls
+            activator = computerRoomV3.activator
+            newXPos = computerRoomV3.newXPos
+            newYPos = computerRoomV3.newYPos
+            main.sprites_for_dialog = pygame.sprite.Group()
+
+        elif PlayerX > params.WIDTH / (params.WIDTH / 190) and PlayerY < params.HEIGHT / (params.HEIGHT / 530) and NowLocation == officeRoom.NowLocation:
+            secondRulesScene = VideoFileClip('SecondRules.mp4')
+            secondRulesScene.preview()
+            time.sleep(0.1)
+
+            NowLocation = DoorRoom01.NowLocation
+            NowLocationRect = DoorRoom01.NowLocationRect
+            NowLocationBase = 'DoorRoom01.NowLocation'
+            walls = DoorRoom01.walls
+            activator = DoorRoom01.activator
+            newXPos = DoorRoom01.newXPos
+            newYPos = DoorRoom01.newXPos
+
+            #заготовки для других комнат
+            #если кнопка напротив 2 двери: 550 < PlayerY < 650 and 70 < PlayerX < 200
+            #если кнопка напротив 2 двери: 550 < PlayerY < 650 and 570 < PlayerX < 700
+            #если кнопка напротив 3 двери: 550 < PlayerY < 650 and 1070 < PlayerX < 1200
+            #если кнопка напротив 4 двери: 550 < PlayerY < 650 and 1570 < PlayerX < 1700
+
+        elif 550 < PlayerY < 650 and 1070 < PlayerX < 1200 and NowLocation == DoorRoom01.NowLocation:
+            NowLocation = DoorRoom02.NowLocation
+            NowLocationRect = DoorRoom02.NowLocationRect
+            NowLocationBase = 'DoorRoom02.NowLocation'
+            walls = DoorRoom02.walls
+            activator = DoorRoom02.activator
+            newXPos = DoorRoom01.newXPos
+            newYPos = DoorRoom01.newXPos
+
+        elif 550 < PlayerY < 650 and 1570 < PlayerX < 1700 and NowLocation == DoorRoom02.NowLocation:
+            NowLocation = DoorRoom03.NowLocation
+            NowLocationRect = DoorRoom03.NowLocationRect
+            NowLocationBase = 'DoorRoom03.NowLocation'
+            walls = DoorRoom03.walls
+            activator = DoorRoom03.activator
+            newXPos = DoorRoom01.newXPos
+            newYPos = DoorRoom01.newXPos
+
+        elif 550 < PlayerY < 650 and 1570 < PlayerX < 1700 and NowLocation == DoorRoom03.NowLocation:
+            NowLocation = DoorRoom04.NowLocation
+            NowLocationRect = DoorRoom04.NowLocationRect
+            NowLocationBase = 'DoorRoom04.NowLocation'
+            walls = DoorRoom04.walls
+            activator = DoorRoom04.activator
+            newXPos = DoorRoom01.newXPos
+            newYPos = DoorRoom01.newXPos
+
+        elif 550 < PlayerY < 650 and 1070 < PlayerX < 1200 and NowLocation == DoorRoom04.NowLocation:
+            NowLocation = DoorRoom05.NowLocation
+            NowLocationRect = DoorRoom05.NowLocationRect
+            NowLocationBase = 'DoorRoom05.NowLocation'
+            walls = DoorRoom05.walls
+            activator = DoorRoom05.activator
+            newXPos = DoorRoom01.newXPos
+            newYPos = DoorRoom01.newXPos
+
+        elif 550 < PlayerY < 650 and 570 < PlayerX < 700 and NowLocation == DoorRoom05.NowLocation:
+            NowLocation = DoorRoom07.NowLocation
+            NowLocationRect = DoorRoom07.NowLocationRect
+            NowLocationBase = 'DoorRoom07.NowLocation'
+            walls = DoorRoom07.walls
+            activator = DoorRoom07.activator
+            newXPos = DoorRoom01.newXPos
+            newYPos = DoorRoom01.newXPos
+
+        elif 550 < PlayerY < 650 and 70 < PlayerX < 200 and NowLocation == DoorRoom07.NowLocation:
+            NowLocation = DoorRoom08.NowLocation
+            NowLocationRect = DoorRoom08.NowLocationRect
+            NowLocationBase = 'DoorRoom08.NowLocation'
+            walls = DoorRoom08.walls
+            activator = DoorRoom08.activator
+            newXPos = DoorRoom01.newXPos
+            newYPos = DoorRoom01.newXPos
+
+        elif 550 < PlayerY < 650 and 570 < PlayerX < 700 and NowLocation == DoorRoom08.NowLocation:
+            NowLocation = DoorRoom09.NowLocation
+            NowLocationRect = DoorRoom09.NowLocationRect
+            NowLocationBase = 'DoorRoom09.NowLocation'
+            walls = DoorRoom09.walls
+            activator = DoorRoom09.activator
+            newXPos = DoorRoom01.newXPos
+            newYPos = DoorRoom01.newXPos
+
+
         if activatorChecker == True:
             if PlayerX > 1050 and PlayerY > 650 and NowLocation == computerRoom.NowLocation:
                 letterScene = VideoFileClip('letterScene.mp4')
                 letterScene.preview()
+                time.sleep(0.1)
 
                 NowLocation = brainRoom1.NowLocation
                 NowLocationRect = brainRoom1.NowLocationRect
@@ -151,13 +271,24 @@ def run():
                 newXPos = computerRoomV2.newXPos
                 newYPos = computerRoomV2.newYPos
                 main.sprites_for_dialog = pygame.sprite.Group()
-                dialog_window = computerRoom.dialog_window
+                dialog_window = computerRoomV2.dialog_window
 
-        for i in range(0, len(walls)):
+            elif NowLocation == computerRoomV3.NowLocation:
+                NowLocation = officeRoom.NowLocation
+                NowLocationRect = officeRoom.NowLocationRect
+                NowLocationBase = 'officeRoom.NowLocation'
+                walls = officeRoom.walls
+                activator = officeRoom.activator
+                newXPos = officeRoom.newXPos
+                newYPos = officeRoom.newYPos
+                main.sprites_for_dialog = pygame.sprite.Group()
+                dialog_window = officeRoom.dialog_window
+
+        """for i in range(0, len(walls)):
             main.all_sprites.add(walls[i])
 
         for i in range(0, len(activator)):
-            main.all_sprites.add(activator[i])
+            main.all_sprites.add(activator[i])"""
 
         for i in range(0, len(dialog_window)):
             main.sprites_for_dialog.add(dialog_window[i])
@@ -173,6 +304,22 @@ def run():
             if NowLocation in dialogRooms:
                 main.sprites_for_dialog.update()
                 main.sprites_for_dialog.draw(main.screen)
+            elif NowLocation in doorRooms:
+                gameover = VideoFileClip('Gameover.mp4')
+                gameover.preview()
+                time.sleep(0.1)
+
+                secondRulesScene = VideoFileClip('SecondRules.mp4')
+                secondRulesScene.preview()
+                time.sleep(0.1)
+
+                NowLocation = DoorRoom01.NowLocation
+                NowLocationRect = DoorRoom01.NowLocationRect
+                NowLocationBase = 'DoorRoom01.NowLocation'
+                walls = DoorRoom01.walls
+                activator = DoorRoom01.activator
+                newXPos = DoorRoom01.newXPos
+                newYPos = DoorRoom01.newXPos
 
         # После отрисовки всего, переворачиваем экран
         pygame.display.flip()

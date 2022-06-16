@@ -6,10 +6,8 @@ activatorImage = pygame.image.load('empty.png')
 firstDialog = pygame.image.load('dialoge 1.png')
 secondDialog = pygame.image.load('dialoge 2.png')
 thirdDialog = pygame.image.load('dialog3.png')
-
-room1 = pygame.image.load('DoorRooms/dveri_1.png')
-room1_scaled = pygame.transform.scale(room1, (params.WIDTH, params.HEIGHT))
-room1_scaled_rect = room1_scaled.get_rect()
+workRoomV2Dialog = pygame.image.load('dialog4.png')
+officeRoomDialog = pygame.image.load('dialog5.png')
 
 brainRoom1 = pygame.image.load('BrainRooms/brain1.1.png')
 brainRoom1_scaled = pygame.transform.scale(brainRoom1, (params.WIDTH, params.HEIGHT))
@@ -39,9 +37,25 @@ workRoom = pygame.image.load('workRoom.png')
 workRoom_scaled = pygame.transform.scale(workRoom, (params.WIDTH, params.HEIGHT))
 workRoom_scaled_rect = workRoom_scaled.get_rect()
 
+workRoomV2 = pygame.image.load('workRoomV2.png')
+workRoomV2_scaled = pygame.transform.scale(workRoomV2, (params.WIDTH, params.HEIGHT))
+workRoomV2_scaled_rect = workRoomV2_scaled.get_rect()
+
+officeRoom = pygame.image.load('officeRoom.png')
+officeRoom_scaled = pygame.transform.scale(officeRoom, (params.WIDTH, params.HEIGHT))
+officeRoom_scaled_rect = officeRoom_scaled.get_rect()
+
 computerRoom = pygame.image.load('computerRoom.png')
 computerRoom_scaled = pygame.transform.scale(computerRoom, (params.WIDTH, params.HEIGHT))
 computerRoom_scaled_rect = computerRoom_scaled.get_rect()
+
+computerRoomV2 = pygame.image.load('computerRoomV2.png')
+computerRoomV2_scaled = pygame.transform.scale(computerRoomV2, (params.WIDTH, params.HEIGHT))
+computerRoomV2_scaled_rect = computerRoomV2_scaled.get_rect()
+
+computerRoomV3 = pygame.image.load('computerRoomV3.png')
+computerRoomV3_scaled = pygame.transform.scale(computerRoomV3, (params.WIDTH, params.HEIGHT))
+computerRoomV3_scaled_rect = computerRoomV3_scaled.get_rect()
 
 labirint = pygame.image.load('labirint.png')
 labirint_scaled = pygame.transform.scale(labirint, (params.WIDTH, params.HEIGHT))
@@ -54,6 +68,42 @@ start_room_scaled_rect = start_room_scaled.get_rect()
 womanNPC = pygame.image.load('NPC 1.png')
 womanNPC_scaled = pygame.transform.scale(womanNPC, (params.WIDTH/24, params.HEIGHT/16))
 womanNPC_scaled_rect = womanNPC_scaled.get_rect()
+
+room1 = pygame.image.load('DoorRooms/dveri_1.png')
+room1_scaled = pygame.transform.scale(room1, (params.WIDTH, params.HEIGHT))
+room1_scaled_rect = room1_scaled.get_rect()
+
+room2 = pygame.image.load('DoorRooms/dveri_2.png')
+room2_scaled = pygame.transform.scale(room2, (params.WIDTH, params.HEIGHT))
+room2_scaled_rect = room2_scaled.get_rect()
+
+room3 = pygame.image.load('DoorRooms/dveri_3.png')
+room3_scaled = pygame.transform.scale(room3, (params.WIDTH, params.HEIGHT))
+room3_scaled_rect = room3_scaled.get_rect()
+
+room4 = pygame.image.load('DoorRooms/dveri_4.png')
+room4_scaled = pygame.transform.scale(room4, (params.WIDTH, params.HEIGHT))
+room4_scaled_rect = room4_scaled.get_rect()
+
+room5 = pygame.image.load('DoorRooms/dveri_5.png')
+room5_scaled = pygame.transform.scale(room5, (params.WIDTH, params.HEIGHT))
+room5_scaled_rect = room5_scaled.get_rect()
+
+room6 = pygame.image.load('DoorRooms/dveri_6.png')
+room6_scaled = pygame.transform.scale(room6, (params.WIDTH, params.HEIGHT))
+room6_scaled_rect = room6_scaled.get_rect()
+
+room7 = pygame.image.load('DoorRooms/dveri_7.png')
+room7_scaled = pygame.transform.scale(room7, (params.WIDTH, params.HEIGHT))
+room7_scaled_rect = room7_scaled.get_rect()
+
+room8 = pygame.image.load('DoorRooms/dveri_8.png')
+room8_scaled = pygame.transform.scale(room8, (params.WIDTH, params.HEIGHT))
+room8_scaled_rect = room8_scaled.get_rect()
+
+room9 = pygame.image.load('DoorRooms/dveri_9.png')
+room9_scaled = pygame.transform.scale(room9, (params.WIDTH, params.HEIGHT))
+room9_scaled_rect = room9_scaled.get_rect()
 
 player_image_right1 = pygame.image.load("player/bock1.png")
 player_image_right1 = pygame.transform.scale(player_image_right1, (params.WIDTH/24, params.HEIGHT/16))

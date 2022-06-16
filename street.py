@@ -13,5 +13,5 @@ activator = [
     Activator.Activator(400, 100, 750, 550)
 ]
 
-newXPos = 1000
-newYPos = 1000
+newXPos = params.WIDTH / (params.WIDTH / 937)
+newYPos = params.HEIGHT / (params.HEIGHT / 987)
