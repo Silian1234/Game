@@ -31,13 +31,13 @@ doorRooms = [
 
 def run():
     global walls, activator, NowLocation, NowLocationRect, NowLocationBase
-    walls = officeRoom.walls
-    activator = officeRoom.activator
-    NowLocation = officeRoom.NowLocation
-    NowLocationRect = officeRoom.NowLocationRect
-    NowLocationBase = 'officeRoom.NowLocation'
-    newXPos = officeRoom.newXPos
-    newYPos = officeRoom.newYPos
+    walls = undergroung.walls
+    activator = undergroung.activator
+    NowLocation = undergroung.NowLocation
+    NowLocationRect = undergroung.NowLocationRect
+    NowLocationBase = 'undergroung.NowLocation'
+    newXPos = undergroung.newXPos
+    newYPos = undergroung.newYPos
     dialog_window = []
 
     running = True
