@@ -5,12 +5,12 @@ NowLocation = imports.brainRoom1_scaled
 NowLocationRect = imports.brainRoom1_scaled_rect
 
 walls = [
-    Block.Block(1920, 10, 0, 540)
+    Block.Block(params.WIDTH / (1920 / 1920), params.HEIGHT / (1080 / 10), 0, params.HEIGHT / (1080 / 540))
 ]
 
 activator = [
-    Activator.Activator(200, 200, 1500, 780)
+    Activator.Activator(params.WIDTH / (1920 / 200), params.HEIGHT / (1080 / 200), params.WIDTH / (1920 / 1500), params.HEIGHT / (1080 / 780))
 ]
 
-newXPos = 800
-newYPos = 700
+newXPos = params.WIDTH / (1920 / 800)
+newYPos = params.HEIGHT / (1080 / 700)
