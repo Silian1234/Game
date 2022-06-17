@@ -14,4 +14,4 @@ activator = [
 ]
 
 newXPos = params.WIDTH / (1920 / 940)
-newYPos = params.HEIGHT / (1080 / 30)
+newYPos = params.HEIGHT / (1080 / 50)

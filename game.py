@@ -8,7 +8,7 @@ from BrainRooms import brainRoom1, brainRoom2, brainRoom3, brainRoom4, brainRoom
 leftWrongBrainRooms = [
     brainRoom1.NowLocation,
     brainRoom2.NowLocation,
-    #brainRoom4.NowLocation,
+    brainRoom4.NowLocation,
     brainRoom5.NowLocation
 ]
 
@@ -46,6 +46,7 @@ def run():
     newXPos = Level_01.newXPos
     newYPos = Level_01.newYPos
     dialog_window = []
+    activatorV2 = Level_01.activator
 
     """labirintRulesScene = VideoFileClip('labirintRules.mp4')
     labirintRulesScene.preview()
@@ -93,6 +94,7 @@ def run():
         PlayerY = player.Player.getY(main.player)
         PlayerX = player.Player.getX(main.player)
         activatorChecker = player.Player.activatorChecker(main.player)
+        activatorCheckerV2 = player.Player.activatorCheckerV2(main.player)
 
         if PlayerY < params.HEIGHT / (1080 / 250) and NowLocation == Level_01.NowLocation:
             secretaryDialog = VideoFileClip(r'SecretaryDialog.mp4')
@@ -303,6 +305,7 @@ def run():
                 NowLocationBase = 'brainRoom1.NowLocation'
                 walls = brainRoom1.walls
                 activator = brainRoom1.activator
+                activatorV2 = brainRoom1.activatorV2
                 newXPos = brainRoom1.newXPos
                 newYPos = brainRoom1.newYPos
 
@@ -312,6 +315,7 @@ def run():
                 NowLocationBase = 'brainRoom2.NowLocation'
                 walls = brainRoom2.walls
                 activator = brainRoom2.activator
+                activatorV2 = brainRoom2.activatorV2
                 newXPos = brainRoom2.newXPos
                 newYPos = brainRoom2.newYPos
 
@@ -321,6 +325,7 @@ def run():
                 NowLocationBase = 'brainRoom3.NowLocation'
                 walls = brainRoom3.walls
                 activator = brainRoom3.activator
+                activatorV2 = brainRoom3.activatorV2
                 newXPos = brainRoom3.newXPos
                 newYPos = brainRoom3.newYPos
 
@@ -330,6 +335,7 @@ def run():
                 NowLocationBase = 'brainRoom4.NowLocation'
                 walls = brainRoom4.walls
                 activator = brainRoom4.activator
+                activatorV2 = brainRoom4.activatorV2
                 newXPos = brainRoom4.newXPos
                 newYPos = brainRoom4.newYPos
 
@@ -339,6 +345,7 @@ def run():
                 NowLocationBase = 'brainRoom5.NowLocation'
                 walls = brainRoom5.walls
                 activator = brainRoom5.activator
+                activatorV2 = brainRoom5.activatorV2
                 newXPos = brainRoom5.newXPos
                 newYPos = brainRoom5.newYPos
 
@@ -376,27 +383,27 @@ def run():
                 dialog_window = workRoomV3.dialog_window
 
             elif NowLocation == undergroung.NowLocation:
-                labirintRulesScene = VideoFileClip('labirintRules.mp4')
-                labirintRulesScene.preview()
-                time.sleep(0.1)
+                #labirintRulesScene = VideoFileClip('labirintRules.mp4')
+                #labirintRulesScene.preview()
+                #time.sleep(0.1)
 
-                NowLocation = labirint1.NowLocation
+                """NowLocation = labirint1.NowLocation
                 NowLocationRect = labirint1.NowLocationRect
                 NowLocationBase = 'labirint1.NowLocation'
                 walls = labirint1.walls
                 activator = labirint1.activator
                 newXPos = labirint1.newXPos
                 newYPos = labirint1.newYPos
-                main.sprites_for_dialog = pygame.sprite.Group()
+                main.sprites_for_dialog = pygame.sprite.Group()"""
 
-                """NowLocation = undergroundV2.NowLocation
+                NowLocation = undergroundV2.NowLocation
                 NowLocationRect = undergroundV2.NowLocationRect
                 NowLocationBase = 'undergroundV2.NowLocation'
                 walls = undergroundV2.walls
                 activator = undergroundV2.activator
                 newXPos = undergroundV2.newXPos
                 newYPos = undergroundV2.newYPos
-                main.sprites_for_dialog = pygame.sprite.Group()"""
+                main.sprites_for_dialog = pygame.sprite.Group()
 
             elif NowLocation == undergroundV2.NowLocation:
                 NowLocation = workRoomV4.NowLocation
@@ -424,13 +431,17 @@ def run():
             main.all_sprites.add(walls[i])
 
         for i in range(0, len(activator)):
-            main.all_sprites.add(activator[i])"""
+            main.all_sprites.add(activator[i])
+
+        for i in range(0, len(activatorV2)):
+            main.all_sprites.add(activatorV2[i])"""
 
         for i in range(0, len(dialog_window)):
             main.sprites_for_dialog.add(dialog_window[i])
 
         main.player.setWalls(walls)
         main.player.setActivator(activator)
+        main.player.setActivatorV2(activatorV2)
 
         main.screen.blit(NowLocation, NowLocationRect)
         main.all_sprites.draw(main.screen)
@@ -463,7 +474,7 @@ def run():
                 gameover.preview()
                 time.sleep(0.1)
 
-                labirintRulesScene = VideoFileClip('SecondRules.mp4')
+                labirintRulesScene = VideoFileClip('labirintRules.mp4')
                 labirintRulesScene.preview()
                 time.sleep(0.1)
 
@@ -476,27 +487,26 @@ def run():
                 newYPos = labirint1.newXPos
                 cur.execute(f"UPDATE PlayerPos SET befLocation = ' '")
 
-        if PlayerY > params.HEIGHT / (1080 / 777):
-            if PlayerX < params.WIDTH / (1920/430):
-                if NowLocation in leftWrongBrainRooms:
-                    gameover = VideoFileClip('Gameover.mp4')
-                    gameover.preview()
-                    time.sleep(0.1)
+        if activatorCheckerV2 == True:
+            if NowLocation in leftWrongBrainRooms:
+                gameover = VideoFileClip('Gameover.mp4')
+                gameover.preview()
+                time.sleep(0.1)
 
-                    letterScene = VideoFileClip('letterScene.mp4')
-                    letterScene.preview()
-                    time.sleep(0.1)
+                letterScene = VideoFileClip('letterScene.mp4')
+                letterScene.preview()
+                time.sleep(0.1)
 
-                    NowLocation = brainRoom1.NowLocation
-                    NowLocationRect = brainRoom1.NowLocationRect
-                    NowLocationBase = 'brainRoom1.NowLocation'
-                    walls = brainRoom1.walls
-                    activator = brainRoom1.activator
-                    newXPos = brainRoom1.newXPos
-                    newYPos = brainRoom1.newYPos
-                    cur.execute(f"UPDATE PlayerPos SET befLocation = ' '")
+                NowLocation = brainRoom1.NowLocation
+                NowLocationRect = brainRoom1.NowLocationRect
+                NowLocationBase = 'brainRoom1.NowLocation'
+                walls = brainRoom1.walls
+                activator = brainRoom1.activator
+                newXPos = brainRoom1.newXPos
+                newYPos = brainRoom1.newYPos
+                cur.execute(f"UPDATE PlayerPos SET befLocation = ' '")
 
-            elif NowLocation == brainRoom3.NowLocation and PlayerX > params.WIDTH / (1920/1450):
+            elif NowLocation == brainRoom3.NowLocation:
                 gameover = VideoFileClip('Gameover.mp4')
                 gameover.preview()
                 time.sleep(0.1)

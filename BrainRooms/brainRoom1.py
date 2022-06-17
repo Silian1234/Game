@@ -1,5 +1,5 @@
 import pygame
-import params, Block, imports, Activator
+import params, Block, imports, Activator, ActivatorV2
 
 NowLocation = imports.brainRoom1_scaled
 NowLocationRect = imports.brainRoom1_scaled_rect
@@ -10,6 +10,10 @@ walls = [
 
 activator = [
     Activator.Activator(params.WIDTH / (1920 / 200), params.HEIGHT / (1080 / 200), params.WIDTH / (1920 / 1500), params.HEIGHT / (1080 / 780))
+]
+
+activatorV2 = [
+    ActivatorV2.ActivatorV2(params.WIDTH / (1920 / 200), params.HEIGHT / (1080 / 200), params.WIDTH / (1920 / 200), params.HEIGHT / (1080 / 780))
 ]
 
 newXPos = params.WIDTH / (1920 / 800)

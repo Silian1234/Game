@@ -21,6 +21,7 @@ class Player(pygame.sprite.Sprite):
         self.animCountWS = 0
         self.walls = []
         self.activator = []
+        self.activatorV2 = []
         self.NPSS = []
         self.dialog_window = []
 
@@ -55,19 +56,19 @@ class Player(pygame.sprite.Sprite):
                 self.image = imports.redDot
                 if keystate[pygame.K_a]:
                     self.speedx = -10
-                    self.image = imports.redDot
+                    self.image = pygame.transform.scale(imports.redDot, (15, 15))
                     self.animCountAD += 1
                 if keystate[pygame.K_d]:
                     self.speedx = 10
-                    self.image = imports.redDot
+                    self.image = pygame.transform.scale(imports.redDot, (15, 15))
                     self.animCountAD +=1
                 if keystate[pygame.K_w]:
                     self.speedy = -10
-                    self.image = imports.redDot
+                    self.image = pygame.transform.scale(imports.redDot, (15, 15))
                     self.animCountWS +=1
                 if keystate[pygame.K_s]:
                     self.speedy = 10
-                    self.image = imports.redDot
+                    self.image = pygame.transform.scale(imports.redDot, (15, 15))
                     self.animCountWS += 1
         NowX = self.rect.x
         NowY = self.rect.y
@@ -157,6 +158,9 @@ class Player(pygame.sprite.Sprite):
     def setActivator(self, activator):
         self.activator = activator
 
+    def setActivatorV2(self, activatorV2):
+        self.activatorV2 = activatorV2
+
     def setNPSS(self, NPSS):
         self.NPSS = NPSS
 
@@ -181,6 +185,29 @@ class Player(pygame.sprite.Sprite):
             topB = activators.getY()
             leftB = activators.getX()
             rightB = activators.getX() + activators.getWidth()
+
+            if bottomA <= topB:
+                continue
+            elif topA >= bottomB:
+                continue
+            elif rightA <= leftB:
+                continue
+            elif leftA >= rightB:
+                continue
+            return True
+
+    def activatorCheckerV2(self):
+        for i in range(0, len(self.activatorV2)):
+            activatorsV2 = self.activatorV2[i]
+            bottomA = self.rect.bottom
+            topA = self.rect.top
+            rightA = self.rect.right
+            leftA = self.rect.left
+
+            bottomB = activatorsV2.getY() + activatorsV2.getHeight()
+            topB = activatorsV2.getY()
+            leftB = activatorsV2.getX()
+            rightB = activatorsV2.getX() + activatorsV2.getWidth()
 
             if bottomA <= topB:
                 continue
