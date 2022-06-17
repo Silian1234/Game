@@ -5,6 +5,13 @@ from config import cur, con
 from moviepy.editor import *
 from BrainRooms import brainRoom1, brainRoom2, brainRoom3, brainRoom4, brainRoom5
 
+leftWrongBrainRooms = [
+    brainRoom1.NowLocation,
+    brainRoom2.NowLocation,
+    brainRoom4.NowLocation,
+    brainRoom5.NowLocation
+]
+
 dialogRooms = [
     workRoom.NowLocation,
     computerRoom.NowLocation,
@@ -454,6 +461,44 @@ def run():
                 activator = labirint1.activator
                 newXPos = labirint1.newXPos
                 newYPos = labirint1.newXPos
+                cur.execute(f"UPDATE PlayerPos SET befLocation = ' '")
+
+        if PlayerY > params.HEIGHT / (1080 / 777):
+            if PlayerX < params.WIDTH / (1920/430):
+                if NowLocation in leftWrongBrainRooms:
+                    gameover = VideoFileClip('Gameover.mp4')
+                    gameover.preview()
+                    time.sleep(0.1)
+
+                    letterScene = VideoFileClip('letterScene.mp4')
+                    letterScene.preview()
+                    time.sleep(0.1)
+
+                    NowLocation = brainRoom1.NowLocation
+                    NowLocationRect = brainRoom1.NowLocationRect
+                    NowLocationBase = 'brainRoom1.NowLocation'
+                    walls = brainRoom1.walls
+                    activator = brainRoom1.activator
+                    newXPos = brainRoom1.newXPos
+                    newYPos = brainRoom1.newYPos
+                    cur.execute(f"UPDATE PlayerPos SET befLocation = ' '")
+
+            elif NowLocation == brainRoom3.NowLocation and PlayerX > params.WIDTH / (1920/1450):
+                gameover = VideoFileClip('Gameover.mp4')
+                gameover.preview()
+                time.sleep(0.1)
+
+                letterScene = VideoFileClip('letterScene.mp4')
+                letterScene.preview()
+                time.sleep(0.1)
+
+                NowLocation = brainRoom1.NowLocation
+                NowLocationRect = brainRoom1.NowLocationRect
+                NowLocationBase = 'brainRoom1.NowLocation'
+                walls = brainRoom1.walls
+                activator = brainRoom1.activator
+                newXPos = brainRoom1.newXPos
+                newYPos = brainRoom1.newYPos
                 cur.execute(f"UPDATE PlayerPos SET befLocation = ' '")
 
         # После отрисовки всего, переворачиваем экран
