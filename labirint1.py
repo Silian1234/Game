@@ -9,8 +9,9 @@ walls = [
 ]
 
 activator = [
-    Activator.Activator(517, 295, 570, 500)
+    Activator.Activator(params.WIDTH / (1980 / 107), params.HEIGHT / (1080 /60), params.WIDTH / (1920 /909), params.HEIGHT / (1080 /1015)),
+    Activator.Activator(params.WIDTH / (1980 / 107), params.HEIGHT / (1080 /60), params.WIDTH / (1920 /1550), params.HEIGHT / (1080 /1014))
 ]
 
-newXPos = params.WIDTH / (params.WIDTH / 940)
-newYPos = params.HEIGHT / (params.HEIGHT / 30)
+newXPos = params.WIDTH / (1920 / 940)
+newYPos = params.HEIGHT / (1080 / 30)

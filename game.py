@@ -8,7 +8,7 @@ from BrainRooms import brainRoom1, brainRoom2, brainRoom3, brainRoom4, brainRoom
 leftWrongBrainRooms = [
     brainRoom1.NowLocation,
     brainRoom2.NowLocation,
-    brainRoom4.NowLocation,
+    #brainRoom4.NowLocation,
     brainRoom5.NowLocation
 ]
 
@@ -46,6 +46,19 @@ def run():
     newXPos = Level_01.newXPos
     newYPos = Level_01.newYPos
     dialog_window = []
+
+    """labirintRulesScene = VideoFileClip('labirintRules.mp4')
+    labirintRulesScene.preview()
+    time.sleep(0.1)
+
+    NowLocation = labirint1.NowLocation
+    NowLocationRect = labirint1.NowLocationRect
+    NowLocationBase = 'labirint1.NowLocation'
+    walls = labirint1.walls
+    activator = labirint1.activator
+    newXPos = labirint1.newXPos
+    newYPos = labirint1.newYPos
+    main.sprites_for_dialog = pygame.sprite.Group()"""
 
     running = True
     while running:
@@ -363,27 +376,27 @@ def run():
                 dialog_window = workRoomV3.dialog_window
 
             elif NowLocation == undergroung.NowLocation:
-                #labirintRulesScene = VideoFileClip('labirintRules.mp4')
-                #labirintRulesScene.preview()
-                #time.sleep(0.1)
+                labirintRulesScene = VideoFileClip('labirintRules.mp4')
+                labirintRulesScene.preview()
+                time.sleep(0.1)
 
-                """NowLocation = labirint1.NowLocation
+                NowLocation = labirint1.NowLocation
                 NowLocationRect = labirint1.NowLocationRect
                 NowLocationBase = 'labirint1.NowLocation'
                 walls = labirint1.walls
                 activator = labirint1.activator
                 newXPos = labirint1.newXPos
                 newYPos = labirint1.newYPos
-                main.sprites_for_dialog = pygame.sprite.Group()"""
+                main.sprites_for_dialog = pygame.sprite.Group()
 
-                NowLocation = undergroundV2.NowLocation
+                """NowLocation = undergroundV2.NowLocation
                 NowLocationRect = undergroundV2.NowLocationRect
                 NowLocationBase = 'undergroundV2.NowLocation'
                 walls = undergroundV2.walls
                 activator = undergroundV2.activator
                 newXPos = undergroundV2.newXPos
                 newYPos = undergroundV2.newYPos
-                main.sprites_for_dialog = pygame.sprite.Group()
+                main.sprites_for_dialog = pygame.sprite.Group()"""
 
             elif NowLocation == undergroundV2.NowLocation:
                 NowLocation = workRoomV4.NowLocation
@@ -407,11 +420,11 @@ def run():
                 main.sprites_for_dialog = pygame.sprite.Group()
                 dialog_window = bossRoom.dialog_window
 
-        '''for i in range(0, len(walls)):
+        """for i in range(0, len(walls)):
             main.all_sprites.add(walls[i])
 
         for i in range(0, len(activator)):
-            main.all_sprites.add(activator[i])'''
+            main.all_sprites.add(activator[i])"""
 
         for i in range(0, len(dialog_window)):
             main.sprites_for_dialog.add(dialog_window[i])

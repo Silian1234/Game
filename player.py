@@ -7,11 +7,11 @@ from config import cur, con
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        #for row in cur.execute(f"SELECT location FROM PlayerPos"):
-            #NowLocation = row[0]
-            #if NowLocation != 'labirint1.NowLocation':
-        self.image = pygame.transform.scale(imports.player_image_right1, (params.WIDTH/24, params.HEIGHT/16))
-            #else: self.image = pygame.transform.scale(imports.redDot, (15, 15))
+        for row in cur.execute(f"SELECT location FROM PlayerPos"):
+            NowLocation = row[0]
+            if NowLocation != 'labirint1.NowLocation':
+                self.image = pygame.transform.scale(imports.player_image_right1, (params.WIDTH/24, params.HEIGHT/16))
+            else: self.image = pygame.transform.scale(imports.redDot, (15, 15))
         self.rect = self.image.get_rect()
         self.rect.x = params.WIDTH / 1.2
         self.rect.y = params.HEIGHT / 2
