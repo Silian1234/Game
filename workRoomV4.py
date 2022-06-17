@@ -4,27 +4,27 @@ NowLocation = imports.workRoomV4_scaled
 NowLocationRect = imports.workRoomV4_scaled_rect
 
 walls = [
-    Block.Block(10, 1000, 385, 100),
-    Block.Block(10, 467, 1667, 100),
-    Block.Block(10, 467, 1667, 801),
-    Block.Block(1500, 10, 385, 995),
-    Block.Block(1200, 10, 588, 260),
-    Block.Block(300, 10, 1667, 801),
-    Block.Block(300, 10, 1667, 557),
-    Block.Block(638, 200, 775, 847),
-    Block.Block(110, 170, 375, 654),
-    Block.Block(500, 145, 588, 260),
-    Block.Block(482, 366, 850, 260),
-    Block.Block(10, 10, 610, 430),
-    Block.Block(10, 10, 623, 467),
-    Block.Block(10, 10, 642, 504),
-    Block.Block(10, 10, 665, 530),
-    Block.Block(10, 10, 690, 553),
-    Block.Block(10, 10, 714, 571),
-    Block.Block(10, 10, 738, 580),
-    Block.Block(10, 10, 762, 589),
-    Block.Block(10, 10, 800, 607),
-    Block.Block(100, 200, 1332, 260),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 1000), params.WIDTH / (1920 / 385),params.HEIGHT / (1080 / 100)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 467), params.WIDTH / (1920 / 1667),params.HEIGHT / (1080 / 100)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 467), params.WIDTH / (1920 / 1667),params.HEIGHT / (1080 / 801)),
+    Block.Block(params.WIDTH / (1920 / 1500), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 385),params.HEIGHT / (1080 / 995)),
+    Block.Block(params.WIDTH / (1920 / 1200), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 588),params.HEIGHT / (1080 / 260)),
+    Block.Block(params.WIDTH / (1920 / 300), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 1667),params.HEIGHT / (1080 / 801)),
+    Block.Block(params.WIDTH / (1920 / 300), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 1667),params.HEIGHT / (1080 / 557)),
+    Block.Block(params.WIDTH / (1920 / 638), params.HEIGHT / (1080 / 200), params.WIDTH / (1920 / 775),params.HEIGHT / (1080 / 847)),
+    Block.Block(params.WIDTH / (1920 / 110), params.HEIGHT / (1080 / 170), params.WIDTH / (1920 / 375),params.HEIGHT / (1080 / 654)),
+    Block.Block(params.WIDTH / (1920 / 500), params.HEIGHT / (1080 / 145), params.WIDTH / (1920 / 588),params.HEIGHT / (1080 / 260)),
+    Block.Block(params.WIDTH / (1920 / 482), params.HEIGHT / (1080 / 366), params.WIDTH / (1920 / 850),params.HEIGHT / (1080 / 260)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 610),params.HEIGHT / (1080 / 430)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 623),params.HEIGHT / (1080 / 467)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 642),params.HEIGHT / (1080 / 504)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 665),params.HEIGHT / (1080 / 530)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 690),params.HEIGHT / (1080 / 553)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 714),params.HEIGHT / (1080 / 571)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 738),params.HEIGHT / (1080 / 580)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 762),params.HEIGHT / (1080 / 589)),
+    Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 800),params.HEIGHT / (1080 / 607)),
+    Block.Block(params.WIDTH / (1920 / 100), params.HEIGHT / (1080 / 200), params.WIDTH / (1920 / 1332),params.HEIGHT / (1080 / 260)),
 ]
 
 activator = [
@@ -36,8 +36,8 @@ NPSSS = [
 ]
 
 dialog_window = [
-    dialogs.dialog(1300, 300, 450, 650, imports.workRoomDialogV4)
+    dialogs.dialog(params.WIDTH / (1920 / 1300), params.HEIGHT / (1080 / 300), params.WIDTH / (1920 / 450),params.HEIGHT / (1080 / 650), imports.workRoomDialogV4)
 ]
 
-newXPos = params.WIDTH / (params.WIDTH / 450)
-newYPos = params.HEIGHT / (params.HEIGHT / 875)
+newXPos = params.WIDTH / (1920 / 450)
+newYPos = params.HEIGHT / (1080 / 875)

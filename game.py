@@ -31,13 +31,13 @@ doorRooms = [
 
 def run():
     global walls, activator, NowLocation, NowLocationRect, NowLocationBase
-    walls = Level_01.walls
-    activator = Level_01.activator
-    NowLocation = Level_01.NowLocation
-    NowLocationRect = Level_01.NowLocationRect
-    NowLocationBase = 'Level_01.NowLocation'
-    newXPos = Level_01.newXPos
-    newYPos = Level_01.newYPos
+    walls = officeRoom.walls
+    activator = officeRoom.activator
+    NowLocation = officeRoom.NowLocation
+    NowLocationRect = officeRoom.NowLocationRect
+    NowLocationBase = 'officeRoom.NowLocation'
+    newXPos = officeRoom.newXPos
+    newYPos = officeRoom.newYPos
     dialog_window = []
 
     running = True
@@ -74,7 +74,7 @@ def run():
         PlayerX = player.Player.getX(main.player)
         activatorChecker = player.Player.activatorChecker(main.player)
 
-        if PlayerY < 250 and NowLocation == Level_01.NowLocation:
+        if PlayerY < params.HEIGHT / (1080 / 250) and NowLocation == Level_01.NowLocation:
             secretaryDialog = VideoFileClip(r'SecretaryDialog.mp4')
             secretaryDialog.preview()
             letter = VideoFileClip('Letter.mp4')
@@ -101,7 +101,7 @@ def run():
             newYPos = workRoom.newYPos
             dialog_window = workRoom.dialog_window
 
-        elif PlayerY < 250 and NowLocation == workRoom.NowLocation:
+        elif PlayerY < params.HEIGHT / (1080 / 250) and NowLocation == workRoom.NowLocation:
             NowLocation = computerRoom.NowLocation
             NowLocationRect = computerRoom.NowLocationRect
             NowLocationBase = 'computerRoom.NowLocation'
@@ -112,7 +112,7 @@ def run():
             main.sprites_for_dialog = pygame.sprite.Group()
             dialog_window = computerRoom.dialog_window
 
-        elif PlayerX > params.WIDTH / (params.WIDTH / 1677) and PlayerY < params.HEIGHT / (params.HEIGHT / 400) and NowLocation == computerRoomV2.NowLocation:
+        elif PlayerX > params.WIDTH / (1920 / 1677) and PlayerY < params.HEIGHT / (1080 / 400) and NowLocation == computerRoomV2.NowLocation:
             NowLocation = workRoomV2.NowLocation
             NowLocationRect = workRoomV2.NowLocationRect
             NowLocationBase = 'workRoomV2.NowLocation'
@@ -123,7 +123,7 @@ def run():
             main.sprites_for_dialog = pygame.sprite.Group()
             dialog_window = workRoomV2.dialog_window
 
-        elif PlayerX > params.WIDTH / (params.WIDTH / 400) and PlayerY < params.HEIGHT / (params.HEIGHT / 328) and NowLocation == workRoomV2.NowLocation:
+        elif PlayerX > params.WIDTH / (1920 / 400) and PlayerY < params.HEIGHT / (1080 / 328) and NowLocation == workRoomV2.NowLocation:
             NowLocation = computerRoomV3.NowLocation
             NowLocationRect = computerRoomV3.NowLocationRect
             NowLocationBase = 'computerRoomV3.NowLocation'
@@ -133,7 +133,7 @@ def run():
             newYPos = computerRoomV3.newYPos
             main.sprites_for_dialog = pygame.sprite.Group()
 
-        elif PlayerX > params.WIDTH / (params.WIDTH / 190) and PlayerY < params.HEIGHT / (params.HEIGHT / 530) and NowLocation == officeRoom.NowLocation:
+        elif PlayerX > params.WIDTH / (1920 / 190) and PlayerY < params.HEIGHT / (1080 / 530) and NowLocation == officeRoom.NowLocation:
             secondRulesScene = VideoFileClip('SecondRules.mp4')
             secondRulesScene.preview()
             time.sleep(0.1)
@@ -152,7 +152,7 @@ def run():
             #если кнопка напротив 3 двери: 550 < PlayerY < 650 and 1070 < PlayerX < 1200
             #если кнопка напротив 4 двери: 550 < PlayerY < 650 and 1570 < PlayerX < 1700
 
-        elif 550 < PlayerY < 650 and 1070 < PlayerX < 1200 and NowLocation == DoorRoom01.NowLocation:
+        elif params.HEIGHT / (1080 / 550) < PlayerY < params.HEIGHT / (1080 / 650) and params.WIDTH / (1920 / 1070) < PlayerX < params.WIDTH / (1920 / 1200) and NowLocation == DoorRoom01.NowLocation:
             NowLocation = DoorRoom02.NowLocation
             NowLocationRect = DoorRoom02.NowLocationRect
             NowLocationBase = 'DoorRoom02.NowLocation'
@@ -161,7 +161,7 @@ def run():
             newXPos = DoorRoom01.newXPos
             newYPos = DoorRoom01.newXPos
 
-        elif 550 < PlayerY < 650 and 1570 < PlayerX < 1700 and NowLocation == DoorRoom02.NowLocation:
+        elif params.HEIGHT / (1080 / 550) < PlayerY < params.HEIGHT / (1080 / 650) and params.WIDTH / (1920 / 1570) < PlayerX < params.WIDTH / (1920 / 1700) and NowLocation == DoorRoom02.NowLocation:
             NowLocation = DoorRoom03.NowLocation
             NowLocationRect = DoorRoom03.NowLocationRect
             NowLocationBase = 'DoorRoom03.NowLocation'
@@ -170,7 +170,7 @@ def run():
             newXPos = DoorRoom01.newXPos
             newYPos = DoorRoom01.newXPos
 
-        elif 550 < PlayerY < 650 and 1570 < PlayerX < 1700 and NowLocation == DoorRoom03.NowLocation:
+        elif params.HEIGHT / (1080 / 550) < PlayerY < params.HEIGHT / (1080 / 650) and params.WIDTH / (1920 / 1570) < PlayerX < params.WIDTH / (1920 / 1700) and NowLocation == DoorRoom03.NowLocation:
             NowLocation = DoorRoom04.NowLocation
             NowLocationRect = DoorRoom04.NowLocationRect
             NowLocationBase = 'DoorRoom04.NowLocation'
@@ -179,7 +179,7 @@ def run():
             newXPos = DoorRoom01.newXPos
             newYPos = DoorRoom01.newXPos
 
-        elif 550 < PlayerY < 650 and 1070 < PlayerX < 1200 and NowLocation == DoorRoom04.NowLocation:
+        elif params.HEIGHT / (1080 / 550) < PlayerY < params.HEIGHT / (1080 / 650) and params.WIDTH / (1920 / 1070) < PlayerX < params.WIDTH / (1920 / 1200) and NowLocation == DoorRoom04.NowLocation:
             NowLocation = DoorRoom05.NowLocation
             NowLocationRect = DoorRoom05.NowLocationRect
             NowLocationBase = 'DoorRoom05.NowLocation'
@@ -188,7 +188,7 @@ def run():
             newXPos = DoorRoom01.newXPos
             newYPos = DoorRoom01.newXPos
 
-        elif 550 < PlayerY < 650 and 570 < PlayerX < 700 and NowLocation == DoorRoom05.NowLocation:
+        elif params.HEIGHT / (1080 / 550) < PlayerY < params.HEIGHT / (1080 / 650) and params.WIDTH / (1920 / 570) < PlayerX < params.WIDTH / (1920 / 700) and NowLocation == DoorRoom05.NowLocation:
             NowLocation = DoorRoom07.NowLocation
             NowLocationRect = DoorRoom07.NowLocationRect
             NowLocationBase = 'DoorRoom07.NowLocation'
@@ -197,7 +197,7 @@ def run():
             newXPos = DoorRoom01.newXPos
             newYPos = DoorRoom01.newXPos
 
-        elif 550 < PlayerY < 650 and 70 < PlayerX < 200 and NowLocation == DoorRoom07.NowLocation:
+        elif params.HEIGHT / (1080 / 550) < PlayerY < params.HEIGHT / (1080 / 650) and params.WIDTH / (1920 / 70) < PlayerX < params.WIDTH / (1920 / 200) and NowLocation == DoorRoom07.NowLocation:
             NowLocation = DoorRoom08.NowLocation
             NowLocationRect = DoorRoom08.NowLocationRect
             NowLocationBase = 'DoorRoom08.NowLocation'
@@ -206,7 +206,7 @@ def run():
             newXPos = DoorRoom01.newXPos
             newYPos = DoorRoom01.newXPos
 
-        elif 550 < PlayerY < 650 and 570 < PlayerX < 700 and NowLocation == DoorRoom08.NowLocation:
+        elif params.HEIGHT / (1080 / 550) < PlayerY < params.HEIGHT / (1080 / 650) and params.WIDTH / (1920 / 570) < PlayerX < params.WIDTH / (1920 / 700) and NowLocation == DoorRoom08.NowLocation:
             NowLocation = DoorRoom09.NowLocation
             NowLocationRect = DoorRoom09.NowLocationRect
             NowLocationBase = 'DoorRoom09.NowLocation'
@@ -215,7 +215,7 @@ def run():
             newXPos = DoorRoom01.newXPos
             newYPos = DoorRoom01.newXPos
 
-        elif 550 < PlayerY < 650 and 570 < PlayerX < 700 and NowLocation == DoorRoom09.NowLocation:
+        elif params.HEIGHT / (1080 / 550) < PlayerY < params.HEIGHT / (1080 / 650) and params.WIDTH / (1920 / 570) < PlayerX < params.WIDTH / (1920 / 700) and NowLocation == DoorRoom09.NowLocation:
             NowLocation = officeRoomV2.NowLocation
             NowLocationRect = officeRoomV2.NowLocationRect
             NowLocationBase = 'officeRoomV2.NowLocation'
@@ -226,7 +226,7 @@ def run():
             main.sprites_for_dialog = pygame.sprite.Group()
             dialog_window = officeRoomV2.dialog_window
 
-        elif PlayerY > 1000 and NowLocation == officeRoomV2.NowLocation:
+        elif PlayerY > params.HEIGHT / (1080 / 1000) and NowLocation == officeRoomV2.NowLocation:
             NowLocation = computerRoomV4.NowLocation
             NowLocationRect = computerRoomV4.NowLocationRect
             NowLocationBase = 'computerRoomV4.NowLocation'
@@ -236,7 +236,7 @@ def run():
             newYPos = computerRoomV4.newYPos
             main.sprites_for_dialog = pygame.sprite.Group()
 
-        elif PlayerX < 460 and PlayerY > 840 and NowLocation == workRoomV3.NowLocation:
+        elif PlayerX < params.WIDTH / (1920 / 460) and PlayerY > params.HEIGHT / (1080 / 840) and NowLocation == workRoomV3.NowLocation:
             NowLocation = undergroung.NowLocation
             NowLocationRect = undergroung.NowLocationRect
             NowLocationBase = 'undergroung.NowLocation'
@@ -246,7 +246,7 @@ def run():
             newYPos = undergroung.newYPos
             main.sprites_for_dialog = pygame.sprite.Group()
 
-        elif PlayerX < 340 and PlayerY > 1015 and NowLocation == labirint1.NowLocation:
+        elif PlayerX < params.WIDTH / (1920 / 340) and PlayerY > params.HEIGHT / (1080 / 1015) and NowLocation == labirint1.NowLocation:
             NowLocation = undergroundV2.NowLocation
             NowLocationRect = undergroundV2.NowLocationRect
             NowLocationBase = 'undergroundV2.NowLocation'
@@ -256,7 +256,7 @@ def run():
             newYPos = undergroundV2.newYPos
             main.sprites_for_dialog = pygame.sprite.Group()
 
-        elif PlayerX > params.WIDTH / (params.WIDTH / 400) and PlayerY < params.HEIGHT / (params.HEIGHT / 328) and NowLocation == workRoomV4.NowLocation:
+        elif PlayerX > params.WIDTH / (1920 / 400) and PlayerY < params.HEIGHT / (1080 / 328) and NowLocation == workRoomV4.NowLocation:
             NowLocation = computerRoomV5.NowLocation
             NowLocationRect = computerRoomV5.NowLocationRect
             NowLocationBase = 'computerRoomV5.NowLocation'
@@ -266,14 +266,14 @@ def run():
             newYPos = computerRoomV5.newYPos
             main.sprites_for_dialog = pygame.sprite.Group()
 
-        elif PlayerY > params.HEIGHT / (params.HEIGHT / 1000) and NowLocation == bossRoom.NowLocation:
+        elif PlayerY > params.HEIGHT / (1080 / 1000) and NowLocation == bossRoom.NowLocation:
             finalVideo = VideoFileClip('finalVideo.mp4')
             finalVideo.preview()
             time.sleep(1)
             running = False
 
         if activatorChecker == True:
-            if PlayerX > 1050 and PlayerY > 650 and NowLocation == computerRoom.NowLocation:
+            if PlayerX > params.WIDTH / (1920 / 1050) and PlayerY > params.HEIGHT / (1080 / 650) and NowLocation == computerRoom.NowLocation:
                 letterScene = VideoFileClip('letterScene.mp4')
                 letterScene.preview()
                 time.sleep(0.1)
@@ -400,11 +400,11 @@ def run():
                 main.sprites_for_dialog = pygame.sprite.Group()
                 dialog_window = bossRoom.dialog_window
 
-        """for i in range(0, len(walls)):
+        for i in range(0, len(walls)):
             main.all_sprites.add(walls[i])
 
         for i in range(0, len(activator)):
-            main.all_sprites.add(activator[i])"""
+            main.all_sprites.add(activator[i])
 
         for i in range(0, len(dialog_window)):
             main.sprites_for_dialog.add(dialog_window[i])
