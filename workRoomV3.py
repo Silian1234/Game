@@ -8,7 +8,7 @@ walls = [
     Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 467), params.WIDTH / (1920 / 1667),params.HEIGHT / (1080 / 100)),
     Block.Block(params.WIDTH / (1920 / 10), params.HEIGHT / (1080 / 467), params.WIDTH / (1920 / 1667),params.HEIGHT / (1080 / 801)),
     Block.Block(params.WIDTH / (1920 / 1500), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 385),params.HEIGHT / (1080 / 995)),
-    Block.Block(params.WIDTH / (1920 / 1200), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 588),params.HEIGHT / (1080 / 260)),
+    Block.Block(params.WIDTH / (1920 / 1400), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 300),params.HEIGHT / (1080 / 260)),
     Block.Block(params.WIDTH / (1920 / 300), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 1667),params.HEIGHT / (1080 / 801)),
     Block.Block(params.WIDTH / (1920 / 300), params.HEIGHT / (1080 / 10), params.WIDTH / (1920 / 1667),params.HEIGHT / (1080 / 557)),
     Block.Block(params.WIDTH / (1920 / 638), params.HEIGHT / (1080 / 200), params.WIDTH / (1920 / 775),params.HEIGHT / (1080 / 847)),
