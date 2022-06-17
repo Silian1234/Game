@@ -29,7 +29,7 @@ walls = [
 ]
 
 activator = [
-    Activator.Activator(params.WIDTH / (1920 / 200), params.HEIGHT / (1080 / 350), params.WIDTH / (1920 / 1332),params.HEIGHT / (1080 / 260))
+    Activator.Activator(params.WIDTH / (1920 / 200), params.HEIGHT / (1080 / 350), params.WIDTH / (1920 / 1332), params.HEIGHT / (1080 / 260))
 ]
 
 NPSSS = [
@@ -37,7 +37,7 @@ NPSSS = [
 ]
 
 dialog_window = [
-    dialogs.dialog(params.WIDTH / (1920 / 1300), params.HEIGHT / (1080 / 300), params.WIDTH / (1920 / 450),params.HEIGHT / (1080 / 650), imports.firstDialog)
+    dialogs.dialog(params.WIDTH / (1920 / 1300), params.HEIGHT / (1080 / 300), params.WIDTH / (1920 / 450), params.HEIGHT / (1080 / 650), imports.firstDialog)
 ]
 
 newXPos = params.WIDTH / (1920 / 1920)

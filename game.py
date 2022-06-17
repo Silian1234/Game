@@ -400,11 +400,11 @@ def run():
                 main.sprites_for_dialog = pygame.sprite.Group()
                 dialog_window = bossRoom.dialog_window
 
-        for i in range(0, len(walls)):
+        '''for i in range(0, len(walls)):
             main.all_sprites.add(walls[i])
 
         for i in range(0, len(activator)):
-            main.all_sprites.add(activator[i])
+            main.all_sprites.add(activator[i])'''
 
         for i in range(0, len(dialog_window)):
             main.sprites_for_dialog.add(dialog_window[i])
