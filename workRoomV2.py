@@ -28,7 +28,7 @@ walls = [
 ]
 
 activator = [
-    Activator.Activator(335, 350, 1332, 270)
+    Activator.Activator(params.WIDTH / (1920 / 335), params.HEIGHT / (1080 / 350), params.WIDTH / (1920 / 1332),params.HEIGHT / (1080 / 270))
 ]
 
 NPSSS = [
